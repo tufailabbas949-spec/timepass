@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            color: aliceblue;
+        }
+        #bull{
+            height: 500px;
+            width:500px ;
+            border-radius: 50%;
+            border: 2px solid blue;
+            background-color:aliceblue;
+            position: relative;
+            left:30%;
+            font-size:large;
+        }
+        body{
+            background-color: black;
+        }
+        #main{
+            height:50px;
+            width: 20%;
+            border-radius: 20px;
+            background-color: aliceblue;
+            color: black;
+            position: absolute;
+            left : 37%;
+            bottom: 100px;
+            font-size: larger;
+        }
+        #main:hover{
+            background-color:rgb(211, 92, 2);
+        }
+        /* .back{
+            display:inline;
+            height:500px;
+            width:500px;
+            background-color:aqua;
+        } */
+         #next{
+            height:50px;
+            width:100px;
+            border-radius:10px;
+            color :aliceblue;
+            background-color: black;
+
+         }
+
+    </style>
+</head>
+<body>
+    <div class="back">
+    <div id="bull">
+
+    </div>
+    </div>
+    <button id="main"> on/ off </button>
+    <button id="next"> dark mode  </button>
+    <script>
+        let bulb = document.querySelector("button")
+        let lig = document.getElementById("bull")
+        let nxt = document.getElementById("next")
+        let bolly = document.querySelector("body")
+        let a = 0
+        bulb.addEventListener("click",function(){
+            if (a===0){
+            bulb.innerText ="on"
+            lig.innerText ="on"
+            lig.style.backgroundColor = "yellow"
+            console.log("click on")
+            a+=1
+            }else{
+            bulb.innerHTML ="off"
+            lig.innerHTML ="off"
+            lig.style.backgroundColor = "white"
+            console.log("click off")
+            a=0
+            }
+        })
+         let b =0;
+        nxt.addEventListener("click",function(){
+            if(b==0){
+                bolly.style.backgroundColor = "white"
+                nxt.innerText= "light mode"
+                lig.style.color = "black"
+                nxt.style.backgroundColor = "white"
+                nxt.style.color = "black"
+                b+=1
+            }else{
+                bolly.style.backgroundColor = "black"
+                nxt.innerText = "dark mode"
+                lig.style.color = "white"
+                nxt.style.backgroundColor = "black"
+                nxt.style.color = "white"
+                b=0
+            }
+    
+        })
+    </script>
+</body>
+</html>
